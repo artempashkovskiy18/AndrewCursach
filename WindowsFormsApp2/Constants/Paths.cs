@@ -14,7 +14,5 @@ namespace WindowsFormsApp2.Constants
         
         public const string IMAGE_NAME = "image.jpeg";
         public const string TEXT_NAME = "text.txt";
-
-        public static readonly List<string> VIDEO_FORMATS = new List<string>{".mp4"};
     }
 }

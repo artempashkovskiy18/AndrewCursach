@@ -49,6 +49,7 @@
     <ItemGroup>
         <Compile Include="Constants\Paths.cs" />
         <Compile Include="Constants\PresentationTypes.cs" />
+        <Compile Include="Constants\Videos.cs" />
         <Compile Include="Form1.cs">
             <SubType>Form</SubType>
         </Compile>

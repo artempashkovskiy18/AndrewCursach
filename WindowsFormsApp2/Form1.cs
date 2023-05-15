@@ -38,5 +38,21 @@ namespace WindowsFormsApp2
             Hide();
             formAnimate.Show();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            foreach (KeyValuePair<string, string> keyValuePair in Videos.VIDEOS_NAME_URL)
+            {
+                ListViewItem item1 = new ListViewItem(keyValuePair.Key);
+                item1.SubItems.Add(keyValuePair.Value);
+                listView1.Items.Add(item1);
+            }
+        }
+
+        private void listView1_ItemActivate(object sender, EventArgs e)
+        {
+            string url = listView1.SelectedItems[0].SubItems[1].Text;
+            System.Diagnostics.Process.Start(url);
+        }
     }
 }
