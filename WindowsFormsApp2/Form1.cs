@@ -54,5 +54,12 @@ namespace WindowsFormsApp2
             string url = listView1.SelectedItems[0].SubItems[1].Text;
             System.Diagnostics.Process.Start(url);
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormPresentation formOkd = new FormPresentation(this, PresentationTypes.OKD, checkBox1.Checked);
+            Hide();
+            formOkd.Show();
+        }
     }
 }

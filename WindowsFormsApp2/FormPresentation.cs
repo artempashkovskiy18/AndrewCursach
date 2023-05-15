@@ -9,7 +9,7 @@ namespace WindowsFormsApp2
 {
     public partial class FormPresentation : Form
     {
-        private readonly Editing _editing = new Editing();
+        private readonly Service _service = new Service();
         private readonly Form _mainForm;
         private int _slidesAmount;
         private int _currentSlide;
@@ -19,7 +19,7 @@ namespace WindowsFormsApp2
         public FormPresentation(Form mainForm, PresentationTypes type, bool editModeIsTurnedOn)
         {
             _type = type;
-            _slidesAmount = _editing.GetSlidesAmount(_type);
+            _slidesAmount = _service.GetSlidesAmount(_type);
             _currentSlide = 1;
             _mainForm = mainForm;
             _editModeIsTurnedOn = editModeIsTurnedOn;
@@ -161,19 +161,19 @@ namespace WindowsFormsApp2
 
         private void FormAutoCad_FormClosing(object sender, FormClosingEventArgs e)
         {
-            _editing.SaveText(textBox1.Text, _currentSlide, _type);
+            _service.SaveText(textBox1.Text, _currentSlide, _type);
             _mainForm.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Image image = _editing.AddPicture(pictureBox1);
-            _editing.SavePicture(new Bitmap(image), _currentSlide, _type);
+            Image image = _service.AddPicture(pictureBox1);
+            _service.SavePicture(new Bitmap(image), _currentSlide, _type);
         }
 
         private void FormAutoCad_KeyDown(object sender, KeyEventArgs e)
         {
-            _editing.SaveText(textBox1.Text, _currentSlide, _type);
+            _service.SaveText(textBox1.Text, _currentSlide, _type);
             switch (e.KeyCode)
             {
                 case Keys.PageUp:
@@ -184,7 +184,7 @@ namespace WindowsFormsApp2
                     break;
             }
 
-            RefreshSlide(_editing.GetPicture(_currentSlide, _type), _editing.GetText(_currentSlide, _type));
+            RefreshSlide(_service.GetPicture(_currentSlide, _type), _service.GetText(_currentSlide, _type));
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -200,14 +200,14 @@ namespace WindowsFormsApp2
                 MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
-                _editing.DeleteSlide(_currentSlide, _type, _slidesAmount);
+                _service.DeleteSlide(_currentSlide, _type, _slidesAmount);
                 _slidesAmount--;
                 if (_currentSlide != 1)
                 {
                     _currentSlide--;
                 }
 
-                RefreshSlide(_editing.GetPicture(_currentSlide, _type), _editing.GetText(_currentSlide, _type));
+                RefreshSlide(_service.GetPicture(_currentSlide, _type), _service.GetText(_currentSlide, _type));
             }
         }
 
@@ -218,7 +218,7 @@ namespace WindowsFormsApp2
 
         private void FormAutoCad_Load(object sender, EventArgs e)
         {
-            RefreshSlide(_editing.GetPicture(_currentSlide, _type), _editing.GetText(_currentSlide, _type));
+            RefreshSlide(_service.GetPicture(_currentSlide, _type), _service.GetText(_currentSlide, _type));
             if (_editModeIsTurnedOn)
             {
                 ResizeSlide();

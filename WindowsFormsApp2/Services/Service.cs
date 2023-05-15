@@ -7,7 +7,7 @@ using WindowsFormsApp2.Constants;
 
 namespace WindowsFormsApp2.Services
 {
-    public class Editing
+    public class Service
     {
         public Image AddPicture(PictureBox pictureBox)
         {
@@ -81,7 +81,7 @@ namespace WindowsFormsApp2.Services
             {
                 image = GetBitmapAndCloseFile(path);
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 image = null;
             }
@@ -98,7 +98,7 @@ namespace WindowsFormsApp2.Services
             {
                 result = File.ReadAllText(path);
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 result = null;
             }
