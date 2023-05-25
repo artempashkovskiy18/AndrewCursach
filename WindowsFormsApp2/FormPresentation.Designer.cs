@@ -54,6 +54,7 @@ namespace WindowsFormsApp2
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(6, 19);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(776, 379);
@@ -83,6 +84,8 @@ namespace WindowsFormsApp2
             // 
             // textBox1
             // 
+            this.textBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.textBox1.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox1.Location = new System.Drawing.Point(6, 408);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
@@ -92,6 +95,7 @@ namespace WindowsFormsApp2
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.textBox1);
@@ -104,9 +108,10 @@ namespace WindowsFormsApp2
             // 
             // label1
             // 
+            this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(534, 440);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 37);
+            this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 6;
             this.label1.Text = "label1";
             // 

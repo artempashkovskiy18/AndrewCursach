@@ -10,3 +10,4 @@ C:\Users\Artem\Desktop\Андрей хуй побрей\cursachC#\WindowsFormsAp
 C:\Users\Artem\Desktop\Андрей хуй побрей\cursachC#\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.pdb
 C:\Users\Artem\Desktop\Андрей хуй побрей\cursachC#\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Form1.resources
 C:\Users\Artem\Desktop\Андрей хуй побрей\cursachC#\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.FormPresentation.resources
+C:\Users\Artem\Desktop\Андрей хуй побрей\cursachC#\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.FormConsultants.resources

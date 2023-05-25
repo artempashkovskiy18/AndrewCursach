@@ -4,7 +4,6 @@
     {
         AUTOCAD,
         THREEDS,
-        ANIMATE,
         OKD
     }
 }

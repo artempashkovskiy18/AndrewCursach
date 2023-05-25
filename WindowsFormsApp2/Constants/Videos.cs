@@ -8,10 +8,10 @@ namespace WindowsFormsApp2.Constants
 
         static Videos()
         {
-            VIDEOS_NAME_URL.Add("1", "https://google.com");
-            VIDEOS_NAME_URL.Add("2", "https://google.com");
-            VIDEOS_NAME_URL.Add("3", "https://google.com");
-            VIDEOS_NAME_URL.Add("4", "https://google.com");
+            VIDEOS_NAME_URL.Add("Photoshop відео", "Photoshop.mp4");
+            VIDEOS_NAME_URL.Add("AR анімація", "AR.mp4");
+            VIDEOS_NAME_URL.Add("Autocad анімація", "Autocad.mp4");
+            VIDEOS_NAME_URL.Add("3DS анімація", "3DS.mp4");
         }
     }
 }

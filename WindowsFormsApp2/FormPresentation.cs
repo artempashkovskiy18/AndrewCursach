@@ -14,7 +14,7 @@ namespace WindowsFormsApp2
         private int _slidesAmount;
         private int _currentSlide;
         private readonly PresentationTypes _type;
-        private bool _editModeIsTurnedOn;
+        private readonly bool _editModeIsTurnedOn;
 
         public FormPresentation(Form mainForm, PresentationTypes type, bool editModeIsTurnedOn)
         {
@@ -219,6 +219,7 @@ namespace WindowsFormsApp2
         private void FormAutoCad_Load(object sender, EventArgs e)
         {
             RefreshSlide(_service.GetPicture(_currentSlide, _type), _service.GetText(_currentSlide, _type));
+            _service.SetBackground(pictureBox1, _type);
             if (_editModeIsTurnedOn)
             {
                 ResizeSlide();

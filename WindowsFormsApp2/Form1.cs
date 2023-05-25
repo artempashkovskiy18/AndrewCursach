@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -18,25 +19,9 @@ namespace WindowsFormsApp2
             InitializeComponent();
         }
 
-        private void buttonAutoCad_Click(object sender, EventArgs e)
-        {
-            FormPresentation formAutoCad = new FormPresentation(this, PresentationTypes.AUTOCAD, checkBox1.Checked);
-            Hide();
-            formAutoCad.Show();
-        }
-
-        private void button3DS_Click(object sender, EventArgs e)
-        {
-            FormPresentation form3Ds = new FormPresentation(this, PresentationTypes.THREEDS, checkBox1.Checked);
-            Hide();
-            form3Ds.Show();
-        }
-
         private void buttonAnimate_Click(object sender, EventArgs e)
         {
-            FormPresentation formAnimate = new FormPresentation(this, PresentationTypes.ANIMATE, checkBox1.Checked);
-            Hide();
-            formAnimate.Show();
+            Process.Start(Paths.ANIMATE_PRESENTATION_NAME);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -52,7 +37,7 @@ namespace WindowsFormsApp2
         private void listView1_ItemActivate(object sender, EventArgs e)
         {
             string url = listView1.SelectedItems[0].SubItems[1].Text;
-            System.Diagnostics.Process.Start(url);
+            Process.Start(url);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -60,6 +45,27 @@ namespace WindowsFormsApp2
             FormPresentation formOkd = new FormPresentation(this, PresentationTypes.OKD, checkBox1.Checked);
             Hide();
             formOkd.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FormConsultants consultants = new FormConsultants(this);
+            Hide();
+            consultants.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            FormPresentation formAutoCad = new FormPresentation(this, PresentationTypes.AUTOCAD, checkBox1.Checked);
+            Hide();
+            formAutoCad.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            FormPresentation formThreeDS = new FormPresentation(this, PresentationTypes.THREEDS, checkBox1.Checked);
+            Hide();
+            formThreeDS.Show();
         }
     }
 }

@@ -141,9 +141,6 @@ namespace WindowsFormsApp2.Services
                 case PresentationTypes.THREEDS:
                     path += Paths.THREEDS_PATH;
                     break;
-                case PresentationTypes.ANIMATE:
-                    path += Paths.ANIMATE_PATH;
-                    break;
                 case PresentationTypes.OKD:
                     path += Paths.OKD_PATH;
                     break;
@@ -152,7 +149,22 @@ namespace WindowsFormsApp2.Services
             return Directory.GetDirectories(path).Length;
         }
 
+        public void SetBackground(PictureBox pictureBox, PresentationTypes type)
+        {
+            string path = GetPathToPresentationFolder(type) + Paths.BACKGROUND_NAME;
+            pictureBox.BackgroundImage = new Bitmap(path);
+            pictureBox.Invalidate();
+        }
+
         private string GetFullPathToSlideFolder(int slideNumber, PresentationTypes type)
+        {
+            string path = GetPathToPresentationFolder(type);
+
+            path += String.Format(Paths.SLIDES_FOLDER, slideNumber);
+            return path;
+        }
+
+        private string GetPathToPresentationFolder(PresentationTypes type)
         {
             string path = "";
             switch (type)
@@ -163,15 +175,11 @@ namespace WindowsFormsApp2.Services
                 case PresentationTypes.THREEDS:
                     path += Paths.THREEDS_PATH;
                     break;
-                case PresentationTypes.ANIMATE:
-                    path += Paths.ANIMATE_PATH;
-                    break;
                 case PresentationTypes.OKD:
                     path += Paths.OKD_PATH;
                     break;
             }
 
-            path += String.Format(Paths.SLIDES_FOLDER, slideNumber);
             return path;
         }
 
